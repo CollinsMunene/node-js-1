@@ -16,7 +16,7 @@ jobs:
       run: docker build -t node_js_1 .
       
     - name: Tag Docker image
-      run: docker tag node_js_1 ${collinshillary/my-public-repo/node_js_1:latest
+      run: docker tag node_js_1 collinshillary/my-public-repo/node_js_1:latest
       
     - name: Push Docker image
       uses: docker/build-push-action@v2
