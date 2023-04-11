@@ -13,5 +13,7 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
+EXPOSE 3000
+
 # Set the container's default command to run the app using node
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
