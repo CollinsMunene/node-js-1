@@ -1,0 +1,26 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build -t node_js_1 .
+      
+    - name: Tag Docker image
+      run: docker tag node_js_1 ${collinshillary/my-public-repo/node_js_1:latest
+      
+    - name: Push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: collinshillary/my-public-repo/node_js_1:latest
